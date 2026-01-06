@@ -22,12 +22,11 @@ zoo.getBySpecies("Giraffe").forEach(animal => {
     console.log(`- ${animal.name} (${animal.species})`);
 });
 
-console.log("\n________________________________\n");
+console.log("\n________________________________\
 
 
-
-const request = require("supertest");
-const app = require("../app");
+import request from "supertest";
+import app from "../app.js";
 
 describe("Health Check", () => {
   it("should return 200 and ok", async () => {
