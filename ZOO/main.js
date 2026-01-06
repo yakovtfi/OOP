@@ -22,17 +22,6 @@ zoo.getBySpecies("Giraffe").forEach(animal => {
     console.log(`- ${animal.name} (${animal.species})`);
 });
 
-console.log("\n________________________________\
+console.log("\n________________________________\n)
 
 
-import request from "supertest";
-import app from "../app.js";
-
-describe("Health Check", () => {
-  it("should return 200 and ok", async () => {
-    const res = await request(app).get("/health");
-
-    expect(res.statusCode).toBe(200);
-    expect(res.body).toEqual({ status: "ok" });
-  });
-});
