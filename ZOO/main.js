@@ -1,3 +1,4 @@
+
 import { Carnivore,Herbivore,Zookeeper } from "./zoo.js";
 
 
@@ -22,3 +23,17 @@ zoo.getBySpecies("Giraffe").forEach(animal => {
 });
 
 console.log("\n________________________________\n");
+
+
+
+const request = require("supertest");
+const app = require("../app");
+
+describe("Health Check", () => {
+  it("should return 200 and ok", async () => {
+    const res = await request(app).get("/health");
+
+    expect(res.statusCode).toBe(200);
+    expect(res.body).toEqual({ status: "ok" });
+  });
+});
